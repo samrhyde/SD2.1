@@ -11,7 +11,7 @@ namespace HydeMvcP1.DAL
         public MIS4200Context() : base("name=DefaultConnection")
         {
             // this method is a 'constructor' and is called when a new context is created
-            // the base attribute says which connection string to use
+         
         }
         // Include each object here. The value inside <> is the name of the class,
         // the value outside should generally be the plural of the class name
