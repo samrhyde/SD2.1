@@ -30,7 +30,12 @@
         <h2>My Projects</h2>
         <p>In the past year, I've created some fantastic and mind-blowing applications that can be viewed here.</p>
         <p><a class="btn btn-default" href="http://cob.ohio.edu/sh765515/">My portfolio &raquo;</a></p>
-        @Html.ActionLink("Customer")
+        @Html.ActionLink("Customers", "Index", "Customers")
+        <br />
+        @Html.ActionLink("Order", "Index", "orders")
+        <br />
+        @Html.ActionLink("Product", "Index", "orderDetails")
+
     </div>
 
 </div>

@@ -1,0 +1,50 @@
+﻿@model HydeMvcP1.Models.orderDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>orderDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.qtyOrdered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.qtyOrdered)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.orderdetailID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

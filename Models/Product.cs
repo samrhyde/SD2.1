@@ -5,8 +5,9 @@ using System.Web;
 
 namespace HydeMvcP1.Models
 {
-    public class Class1
+    public class Product
     {
+        public int supplierID { get; set; }
         public int productID { get; set; }
         public string description { get; set; }
         public decimal unitCost { get; set; }
