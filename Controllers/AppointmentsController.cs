@@ -11,107 +11,112 @@ using HydeMvcP1.Models;
 
 namespace HydeMvcP1.Controllers
 {
-    public class CustomersController : Controller
+    public class AppointmentsController : Controller
     {
         private MIS4200Context db = new MIS4200Context();
 
-        // GET: Customers
+        // GET: Appointments
         public ActionResult Index()
         {
-            return View(db.Customers.ToList());
+            var appointment = db.Appointment.Include(a => a.PetOwner);
+            return View(appointment.ToList());
         }
 
-        // GET: Customers/Details/5
+        // GET: Appointments/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            Appointment appointment = db.Appointment.Find(id);
+            if (appointment == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(appointment);
         }
 
-        // GET: Customers/Create
+        // GET: Appointments/Create
         public ActionResult Create()
         {
+            ViewBag.petOwnerID = new SelectList(db.petOwners, "petOwnerID", "firstName");
             return View();
         }
 
-        // POST: Customers/Create
+        // POST: Appointments/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "customerID,firstName,lastName,email,phone,customerSince")] Customer customer)
+        public ActionResult Create([Bind(Include = "appointmentID,description,apptDate,petOwnerID")] Appointment appointment)
         {
             if (ModelState.IsValid)
             {
-                db.Customers.Add(customer);
+                db.Appointment.Add(appointment);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(customer);
+            ViewBag.petOwnerID = new SelectList(db.petOwners, "petOwnerID", "firstName", appointment.petOwnerID);
+            return View(appointment);
         }
 
-        // GET: Customers/Edit/5
+        // GET: Appointments/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            Appointment appointment = db.Appointment.Find(id);
+            if (appointment == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            ViewBag.petOwnerID = new SelectList(db.petOwners, "petOwnerID", "firstName", appointment.petOwnerID);
+            return View(appointment);
         }
 
-        // POST: Customers/Edit/5
+        // POST: Appointments/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "customerID,firstName,lastName,email,phone,customerSince")] Customer customer)
+        public ActionResult Edit([Bind(Include = "appointmentID,description,apptDate,petOwnerID")] Appointment appointment)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(customer).State = EntityState.Modified;
+                db.Entry(appointment).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(customer);
+            ViewBag.petOwnerID = new SelectList(db.petOwners, "petOwnerID", "firstName", appointment.petOwnerID);
+            return View(appointment);
         }
 
-        // GET: Customers/Delete/5
+        // GET: Appointments/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
+            Appointment appointment = db.Appointment.Find(id);
+            if (appointment == null)
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            return View(appointment);
         }
 
-        // POST: Customers/Delete/5
+        // POST: Appointments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Customer customer = db.Customers.Find(id);
-            db.Customers.Remove(customer);
+            Appointment appointment = db.Appointment.Find(id);
+            db.Appointment.Remove(appointment);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

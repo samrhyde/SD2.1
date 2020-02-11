@@ -168,19 +168,22 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CustomersController.cs" />
+    <Compile Include="Controllers\AppointmentsController.cs" />
+    <Compile Include="Controllers\ApptDetailsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\orderDetailsController.cs" />
-    <Compile Include="Controllers\ordersController.cs" />
-    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\PetOwnersController.cs" />
     <Compile Include="DAL\MIS4200Context.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\MISContext\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Appointment.cs" />
+    <Compile Include="Models\ApptDetail.cs" />
     <Compile Include="Models\OrderDetail.cs" />
+    <Compile Include="Models\Pet.cs" />
+    <Compile Include="Models\PetOwner.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -266,6 +269,21 @@
     <Content Include="Views\orderDetails\Details.cshtml" />
     <Content Include="Views\orderDetails\Edit.cshtml" />
     <Content Include="Views\orderDetails\Index.cshtml" />
+    <Content Include="Views\PetOwners\Create.cshtml" />
+    <Content Include="Views\PetOwners\Delete.cshtml" />
+    <Content Include="Views\PetOwners\Details.cshtml" />
+    <Content Include="Views\PetOwners\Edit.cshtml" />
+    <Content Include="Views\PetOwners\Index.cshtml" />
+    <Content Include="Views\Appointments\Create.cshtml" />
+    <Content Include="Views\Appointments\Delete.cshtml" />
+    <Content Include="Views\Appointments\Details.cshtml" />
+    <Content Include="Views\Appointments\Edit.cshtml" />
+    <Content Include="Views\Appointments\Index.cshtml" />
+    <Content Include="Views\ApptDetails\Create.cshtml" />
+    <Content Include="Views\ApptDetails\Delete.cshtml" />
+    <Content Include="Views\ApptDetails\Details.cshtml" />
+    <Content Include="Views\ApptDetails\Edit.cshtml" />
+    <Content Include="Views\ApptDetails\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

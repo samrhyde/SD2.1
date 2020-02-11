@@ -17,10 +17,10 @@ namespace HydeMvcP1.DAL
         // Include each object here. The value inside <> is the name of the class,
         // the value outside should generally be the plural of the class name
         // and is the name used to reference the entity in code
-        public DbSet<order> Orders { get; set; }
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<orderDetail> OrderDetails { get; set; }
+        public DbSet<Appointment> Appointment { get; set; }
+        public DbSet<PetOwner> petOwners { get; set; }
+        public DbSet<Pet> Pet { get; set; }
+        public DbSet<ApptDetail> ApptDetails { get; set; }
         // add this method - it will be used later
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
