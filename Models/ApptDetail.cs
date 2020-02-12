@@ -8,7 +8,7 @@ namespace HydeMvcP1.Models
     public class ApptDetail
     {
         public int apptDetailID { get; set; }
-        public int qtyOrdered { get; set; }
+        //public int qtyOrdered { get; set; }
         public decimal price { get; set; }
         // the next two properties link the orderDetail to the Order
         public int appointmentID { get; set; }

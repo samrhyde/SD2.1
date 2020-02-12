@@ -12,7 +12,7 @@ namespace HydeMvcP1.Models
         public string lastName { get; set; }
         public string email { get; set; }
         public string phone { get; set; }
-        public DateTime customerSince { get; set; }
+        //public DateTime customerSince { get; set; }
 
         public ICollection<Appointment> Appointment { get; set; }
     }
