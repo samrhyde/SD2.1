@@ -15,5 +15,6 @@ namespace HydeMvcP1.Models
         //public DateTime customerSince { get; set; }
 
         public ICollection<Appointment> Appointment { get; set; }
+        public ICollection<Groomer> Groomer { get; set; }
     }
 }

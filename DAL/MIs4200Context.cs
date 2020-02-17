@@ -19,8 +19,8 @@ namespace HydeMvcP1.DAL
         // and is the name used to reference the entity in code
         public DbSet<Appointment> Appointment { get; set; }
         public DbSet<PetOwner> petOwners { get; set; }
-        public DbSet<Pet> Pet { get; set; }
-        public DbSet<ApptDetail> ApptDetails { get; set; }
+        //public DbSet<Pet> Pet { get; set; }
+       
         // add this method - it will be used later
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
