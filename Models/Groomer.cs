@@ -7,7 +7,7 @@ namespace HydeMvcP1.Models
 {
     public class Groomer
     {
-        //public int supplierID { get; set; }
+        public int groomerID { get; set; }
         public int petOwnerID { get; set; }
         public string description { get; set; }
         public decimal price { get; set; }
