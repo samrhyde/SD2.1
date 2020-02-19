@@ -11,107 +11,107 @@ using HydeMvcP1.Models;
 
 namespace HydeMvcP1.Controllers
 {
-    public class PetOwnersController : Controller
+    public class GroomersController : Controller
     {
         private MIS4200Context db = new MIS4200Context();
 
-        // GET: PetOwners
+        // GET: Groomers
         public ActionResult Index()
         {
-            return View(db.petOwners.ToList());
+            return View(db.Groomers.ToList());
         }
 
-        // GET: PetOwners/Details/5
+        // GET: Groomers/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PetOwner petOwner = db.petOwners.Find(id);
-            if (petOwner == null)
+            Groomer groomer = db.Groomers.Find(id);
+            if (groomer == null)
             {
                 return HttpNotFound();
             }
-            return View(petOwner);
+            return View(groomer);
         }
 
-        // GET: PetOwners/Create
+        // GET: Groomers/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: PetOwners/Create
+        // POST: Groomers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "petOwnerID,firstName,lastName,email,phone")] PetOwner petOwner)
+        public ActionResult Create([Bind(Include = "groomerID,petOwnerID,description,price")] Groomer groomer)
         {
             if (ModelState.IsValid)
             {
-                db.petOwners.Add(petOwner);
+                db.Groomers.Add(groomer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(petOwner);
+            return View(groomer);
         }
 
-        // GET: PetOwners/Edit/5
+        // GET: Groomers/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PetOwner petOwner = db.petOwners.Find(id);
-            if (petOwner == null)
+            Groomer groomer = db.Groomers.Find(id);
+            if (groomer == null)
             {
                 return HttpNotFound();
             }
-            return View(petOwner);
+            return View(groomer);
         }
 
-        // POST: PetOwners/Edit/5
+        // POST: Groomers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "petOwnerID,firstName,lastName,email,phone")] PetOwner petOwner)
+        public ActionResult Edit([Bind(Include = "groomerID,petOwnerID,description,price")] Groomer groomer)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(petOwner).State = EntityState.Modified;
+                db.Entry(groomer).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(petOwner);
+            return View(groomer);
         }
 
-        // GET: PetOwners/Delete/5
+        // GET: Groomers/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PetOwner petOwner = db.petOwners.Find(id);
-            if (petOwner == null)
+            Groomer groomer = db.Groomers.Find(id);
+            if (groomer == null)
             {
                 return HttpNotFound();
             }
-            return View(petOwner);
+            return View(groomer);
         }
 
-        // POST: PetOwners/Delete/5
+        // POST: Groomers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            PetOwner petOwner = db.petOwners.Find(id);
-            db.petOwners.Remove(petOwner);
+            Groomer groomer = db.Groomers.Find(id);
+            db.Groomers.Remove(groomer);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

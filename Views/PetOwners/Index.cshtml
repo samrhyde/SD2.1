@@ -23,9 +23,7 @@
         <th>
             @Html.DisplayNameFor(model => model.phone)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.customerSince)
-        </th>
+       
         <th></th>
     </tr>
 
@@ -43,9 +41,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.phone)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.customerSince)
-        </td>
+        
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.petOwnerID }) |
             @Html.ActionLink("Details", "Details", new { id=item.petOwnerID }) |

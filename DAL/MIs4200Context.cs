@@ -26,6 +26,8 @@ namespace HydeMvcP1.DAL
         {
             base.OnModelCreating(modelBuilder);
         }
+
+        public System.Data.Entity.DbSet<HydeMvcP1.Models.Groomer> Groomers { get; set; }
     }
     
 }

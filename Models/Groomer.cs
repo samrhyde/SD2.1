@@ -10,7 +10,7 @@ namespace HydeMvcP1.Models
         public int groomerID { get; set; }
         public int petOwnerID { get; set; }
         public string description { get; set; }
-        public decimal price { get; set; }
+        public int reviewScore { get; set; }
         // add any other fields as appropriate
         //Product is on the "one" side of a one-to-many relationship with OrderDetail
         //we indicate that with an ICollection

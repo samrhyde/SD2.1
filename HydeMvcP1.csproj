@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AppointmentsController.cs" />
+    <Compile Include="Controllers\GroomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PetOwnersController.cs" />
@@ -282,6 +283,11 @@
     <Content Include="Views\ApptDetails\Details.cshtml" />
     <Content Include="Views\ApptDetails\Edit.cshtml" />
     <Content Include="Views\ApptDetails\Index.cshtml" />
+    <Content Include="Views\Groomers\Create.cshtml" />
+    <Content Include="Views\Groomers\Delete.cshtml" />
+    <Content Include="Views\Groomers\Details.cshtml" />
+    <Content Include="Views\Groomers\Edit.cshtml" />
+    <Content Include="Views\Groomers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
