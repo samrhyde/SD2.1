@@ -15,7 +15,7 @@ namespace HydeMvcP1.Models
         // add any other fields as appropriate
         //Order is on the "one" side of a one-to-many relationship with OrderDetail
         //and we indicate that with an ICollection
-        //public ICollection<Appointment> Appointment { get; set; }
+        //public ICollection<Appointment> apptDa { get; set; }
         //Order is on the Many side of the one-to-many relation between Customer
         //and Order and we represent that relationship like this
         public int petOwnerID { get; set; }
