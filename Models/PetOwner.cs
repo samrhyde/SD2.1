@@ -7,7 +7,11 @@ namespace HydeMvcP1.Models
 {
     public class PetOwner
     {
+        
         public int petOwnerID { get; set; }
+
+        [Display (Name = "First Name")]
+        [Required(ErrorMessage ="Your name is required")]
         public string firstName { get; set; }
         public string lastName { get; set; }
         public string email { get; set; }
