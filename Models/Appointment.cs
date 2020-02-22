@@ -9,8 +9,17 @@ namespace HydeMvcP1.Models
     public class Appointment
     {
         [Key]
+        [Display(Name = "Appointment")]
+        [Required(ErrorMessage ="Appointment ID required")]
+        [StringLength(12)]
         public int appointmentID { get; set; }
+        [Display(Name = "Descriptiont")]
+        [Required(ErrorMessage = "Description required")]
+        [StringLength(80)]
         public string description { get; set; }
+        [Display(Name = "Appointment Date")]
+        [Required(ErrorMessage = "Please put a date in the proper format - mm/dd/yyyy")]
+        [StringLength(12)]
         public DateTime apptDate { get; set; }
         // add any other fields as appropriate
         //Order is on the "one" side of a one-to-many relationship with OrderDetail
