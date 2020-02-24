@@ -34,12 +34,13 @@
         <p>Seen here below is my current project, which is a pet service allowing you to schedule a pet grooming appointment.</p>
         <p><img src="https://s3.cfluent.com/cdn-uploads/3524/1497384159-groomer-2-1024x683.jpg"></p>
         @Html.ActionLink("Sign up as a Pet Owner", "Index", "PetOwners")
+        @Html.ActionLink("Sign up as a Pet Owner", "Index", "PetOwners", new { @class = "btn btn-primary" })
         <br />
         @Html.ActionLink("Schedule Appointments", "Index", "Appointments")
         <br />
         @Html.ActionLink("View Groomers", "Index", "Groomers")
         <br />
-      
+
 
     </div>
 
