@@ -8,7 +8,7 @@ namespace HydeMvcP1.Models
     public class Groomer
     {
         public int groomerID { get; set; }
-        public int petOwnerID { get; set; }
+        //public int petOwnerID { get; set; }
         public string description { get; set; }
         public int reviewScore { get; set; }
         // add any other fields as appropriate

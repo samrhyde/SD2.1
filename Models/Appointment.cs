@@ -19,6 +19,7 @@ namespace HydeMvcP1.Models
         //Order is on the Many side of the one-to-many relation between Customer
         //and Order and we represent that relationship like this
         public int petOwnerID { get; set; }
+        public int groomerID { get; set; }
         public virtual PetOwner PetOwner { get; set; }
     }
 }
